@@ -1,7 +1,15 @@
 
-<div *ngFor='let author of authors'>
-    <img class="authorImage" [src]='author.imageURL'/><br/>
+<div *ngFor='let author of authors' style="float: left;border-style: double;padding: 10px;margin: 10px;
+height: 250px;width: 250px">
+    <img class="authorImage" [src]='author.imageURL' 
+    [style.width.px]='width'
+    [style.heigth.px]='heigth'/><br/>
     Name : {{author.name}}<br/>
     Department : {{author.Department}}<br/>
     Start Rating : {{author.StarRating}}
+   <br/> <button type="button" [value]='author.name' (click)='getDetails($event)'>Get Details!</button>
+</div>
+<br/>
+<div>
+    {{buttonValue}}
 </div>

@@ -7,12 +7,15 @@ import { Component } from "@angular/core";
 })
 export class AuthorsListComponent{
     title :string = "Author";
+    width :number = 100;
+    height :number = 100;
+    buttonValue :string = "Nothing clicked yet :)";
     authors :any[]=[{
         "name":"Koti Rama Murthy",
         "id":"AU-001",
         "imageURL":'https://openclipart.org/download/132289/George-Washington-Carver.svg',
         "Department":"Computers",
-        "StarRating":4.5,
+        "StarRating":4.5
     },
     {
         "name":"Sai Sudha",
@@ -35,4 +38,7 @@ export class AuthorsListComponent{
         "Department":"Entertainment",
         "StarRating":4.0
     }];
+    getDetails(event :any) :void{
+        this.buttonValue = "Getting details of "+event.target.value;
+    }
 }
