@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IAuthor } from "./author";
 
 @Component({
     selector:'pm-authors',
@@ -10,33 +11,33 @@ export class AuthorsListComponent{
     width :number = 100;
     height :number = 100;
     buttonValue :string = "Nothing clicked yet :)";
-    authors :any[]=[{
+    authors :IAuthor[]=[{
         "name":"Koti Rama Murthy",
         "id":"AU-001",
         "imageURL":'https://openclipart.org/download/132289/George-Washington-Carver.svg',
-        "Department":"Computers",
-        "StarRating":4.5
+        "department":"Computers",
+        "starRating":4.5
     },
     {
         "name":"Sai Sudha",
         "id":"AU-002",
         "imageURL":'https://openclipart.org/download/276090/Chromatic-Triangular-Steve-Jobs.svg',
-        "Department":"Electricals",
-        "StarRating":4.6
+        "department":"Electricals",
+        "starRating":4.6
     },
     {
         "name":"Manohar Damodara",
         "id":"AU-003",
         "imageURL":'https://openclipart.org/download/190757/G-W-Carver.svg',
-        "Department":"Mechanical",
-        "StarRating":4.4
+        "department":"Mechanical",
+        "starRating":4.4
     },
     {
         "name":"Allu Arjun",
         "id":"AU-004",
         "imageURL":'https://openclipart.org/download/25015/Anonymous-Einstein.svg',
-        "Department":"Entertainment",
-        "StarRating":4.0
+        "department":"Entertainment",
+        "starRating":4.0
     }];
     getDetails(event :any) :void{
         this.buttonValue = "Getting details of "+event.target.value;

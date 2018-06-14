@@ -4,10 +4,12 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AuthorsListComponent } from './authors/authors-list.component';
+import { CovertDashToSpaces } from './shared/convertDashToSpace.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   declarations: [
-    AppComponent,AuthorsListComponent
+    AppComponent,AuthorsListComponent,CovertDashToSpaces,StarComponent
   ],
   imports: [
     BrowserModule,
