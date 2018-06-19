@@ -12,7 +12,7 @@ export class AppComponent {
   getDetailsClicked :boolean = false;
   hideDetailsClicked :boolean = false;
   login(data) :void{
-    if(data.user_name == data.password){
+    if(data.user_name!='' && data.user_name == data.password){
       this.loggedIn = true;
       this.name = data.user_name;
       this.error = '';
