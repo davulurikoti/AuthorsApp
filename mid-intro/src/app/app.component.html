@@ -1,10 +1,40 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <header class='container-fluid'>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">{{brand}}</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item active" *ngIf='loggedIn && name'>
+                <a style="color: rgb(241, 12, 24);">Welcome back <b><i>{{name | titlecase}}</i></b></a>
+              </li>
+              <li class="nav-item active" *ngIf='error && !loggedIn'>
+                  <a style="color: rgb(241, 12, 24);">{{error}}</a>
+              </li>
+              
+            </ul>
+            <form class="form-inline my-2 my-lg-0" #userdata="ngForm" (ngSubmit)="login(userdata.value)" *ngIf='!loggedIn'>
+                <input class="form-control mr-sm-2" type="text" name="user_name" placeholder="User Name" ngModel>
+                <input class="form-control mr-sm-2" type="password" name="password" placeholder="password" ngModel>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+            </form>
+            <form class="form-inline my-2 my-lg-0" (ngSubmit)="logout()" *ngIf='loggedIn'>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+          </div>
+        </nav>
+  </header>
+  <br/>
+  <div style="text-align: center">
+    <button *ngIf='loggedIn && !getDetailsClicked' type="button" class="btn btn-primary" (click)='getDetails()'>Get Authors</button>
+    <button *ngIf='loggedIn && !hideDetailsClicked && getDetailsClicked' type="button" class="btn btn-primary" (click)='hideDetails()'>Hide Details</button>
 </div>
-<div>
-  <pm-authors></pm-authors>
-</div>
+<br/>
+  <div *ngIf='loggedIn && getDetailsClicked'>
+    <pm-authors></pm-authors>
+  </div>
 

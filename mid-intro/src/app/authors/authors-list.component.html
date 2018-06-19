@@ -1,12 +1,23 @@
-
-<div class='panel panel-primary' *ngFor='let author of authors' style="float: left;border-style: double;padding: 10px;margin: 10px;
-    height: 250px;width: 250px">
-    <img class="authorImage" [src]='author.imageURL' 
-    [style.width.px]='width'
-    [style.heigth.px]='heigth'/><br/>
-    Name : {{author.name}}<br/>
-    Id : {{author.id | CovertDashToSpace:'-' }}<br/>
-    Department : {{author.department}}<br/>
-    Start Rating : <pm-star [rating]='author.starRating'></pm-star>
-   <br/> <button type="button" [value]='author.name' (click)='getDetails($event)'>Get Details!</button>
+<div class="card-deck">
+    <div class="card" *ngFor='let author of authors'>
+        <img class="card-img-top" [src]='author.imageURL' [style.width.px]='width' [style.heigth.px]='heigth' alt="card image cap" style="align-content: center">
+        <div class="card-body">
+            <table class="table-sm" style="width: 300px;">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Name:</th>
+                            <td>{{author.name}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Id:</th>
+                            <td>{{author.id | CovertDashToSpace:'-' }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Star Rating:</th>
+                            <td>{{author.starRating}}</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
 </div>
