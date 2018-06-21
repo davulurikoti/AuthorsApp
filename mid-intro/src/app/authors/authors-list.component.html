@@ -1,23 +1,29 @@
-<div class="card-deck">
-    <div class="card" *ngFor='let author of authors'>
+<div class="container container-fluid">
+    <div class="row">
+    <div class="col-sm-3" *ngFor='let author of authors'>
+    <div class="card">
         <img class="card-img-top" [src]='author.imageURL' [style.width.px]='width' [style.heigth.px]='heigth' alt="card image cap" style="align-content: center">
         <div class="card-body">
-            <table class="table-sm" style="width: 300px;">
+            <div class="table-responsive">
+            <table class="table-sm" style="width: 90%;">
                     <tbody>
                         <tr>
-                            <th scope="row">Name:</th>
-                            <td>{{author.name}}</td>
+                            <th scope="row" width="50%">Name:</th>
+                            <td width="50%">{{author.name}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Id:</th>
-                            <td>{{author.id | CovertDashToSpace:'-' }}</td>
+                            <th scope="row" width="50%">Id:</th>
+                            <td width="50%">{{author.id | CovertDashToSpace:'-' }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Star Rating:</th>
-                            <td>{{author.starRating}}</td>
+                            <th scope="row" width="50%">Star Rating:</th>
+                            <td width="50%">{{author.starRating}}</td>
                         </tr>
                     </tbody>
             </table>
+            </div>
         </div>
+    </div>
+    </div>
     </div>
 </div>

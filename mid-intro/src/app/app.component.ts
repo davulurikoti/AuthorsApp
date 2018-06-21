@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { AuthorService } from './authors/author.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl:'./app.component.html'
+  templateUrl:'./app.component.html',
+  providers:[AuthorService]
 })
 export class AppComponent {
   loggedIn :boolean = false;
@@ -25,6 +27,7 @@ export class AppComponent {
   }
   logout() :void{
     this.loggedIn = false;
+    this.getDetailsClicked = false;
     this.name = '';
   }
   getDetails() :void{
