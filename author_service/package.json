@@ -1,0 +1,14 @@
+{
+  "name": "author_service",
+  "version": "1.0.0",
+  "description": "This Project provides the service that are required for my Authoring project",
+  "main": "authoring_service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Koti Rama Murthy Davuluri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
