@@ -1,0 +1,24 @@
+{
+  "name": "mongonode",
+  "version": "1.0.0",
+  "description": "I started this project to connect to my local Mongo DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo",
+    "node"
+  ],
+  "author": "Koti Rama Murthy Davuluri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.6"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "nodemon": "^1.17.5"
+  }
+}
