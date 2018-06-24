@@ -10,7 +10,11 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 var authorsSchema = mongoose.Schema({
-    name: String
+    name :String,
+    id :String,
+    imageURL :String,
+    department :String,
+    starRating :Number
   });
   var Authors = mongoose.model('authors', authorsSchema);
 /*db.once('open', function() {
@@ -33,14 +37,13 @@ app.get('/',function(req,res){
     res.send('Please use /api/authors');
 });
 
-app.get('/authorscollection',function(req,res){
-    
+app.get('/authors',function(req,res){
+    res.setHeader('Content-Type', 'application/json');
     Authors.find(function(err,authors){
         if(err){
             throw err;
         }
-        console.log(authors); 
-        res.send(authors);
+        res.send(JSON.stringify(authors,null,3));
     });
 });
 
