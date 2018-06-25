@@ -16,7 +16,13 @@ var authorsSchema = mongoose.Schema({
     department :String,
     starRating :Number
   });
+  var userCredentialsSchema = mongoose.Schema({
+    userName :String,
+    password :String
+  });
+
   var Authors = mongoose.model('authors', authorsSchema);
+  var UserCredentials = mongoose.model('usercredentials',userCredentialsSchema);
 /*db.once('open', function() {
     var authorsSchema = mongoose.Schema({
         name: String
@@ -47,6 +53,10 @@ app.get('/authors',function(req,res){
     });
 });
 
+app.post('/signUp',(req,res)=>{
+    console.log("Koti"+req.body);
+    res.send("Done");
+});
 
 app.listen('3010',function(){
     console.log('listening to 3010 port')
